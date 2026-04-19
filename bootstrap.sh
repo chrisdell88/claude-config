@@ -12,7 +12,23 @@ fi
 ln -sfn "$(pwd)/agents" ~/.claude/agents
 echo "✅ agents symlinked"
 
-# 2. Clone all projects
+# 2. Symlink global CLAUDE.md (8 standing rules, auto-loaded in every session)
+if [ -f ~/.claude/CLAUDE.md ] && [ ! -L ~/.claude/CLAUDE.md ]; then
+  echo "Backing up existing ~/.claude/CLAUDE.md to ~/.claude/CLAUDE.md.backup"
+  mv ~/.claude/CLAUDE.md ~/.claude/CLAUDE.md.backup
+fi
+ln -sfn "$(pwd)/CLAUDE.md" ~/.claude/CLAUDE.md
+echo "✅ global CLAUDE.md symlinked"
+
+# 3. Symlink slash commands dir (/onboard, etc.)
+if [ -d ~/.claude/commands ] && [ ! -L ~/.claude/commands ]; then
+  echo "Backing up existing ~/.claude/commands to ~/.claude/commands.backup"
+  mv ~/.claude/commands ~/.claude/commands.backup
+fi
+ln -sfn "$(pwd)/commands" ~/.claude/commands
+echo "✅ slash commands symlinked"
+
+# 4. Clone all projects
 mkdir -p ~/Projects
 cd ~/Projects
 for repo in bracketx mockx birdiex pghsportsnews chrisdell-portfolio ledgerx fantasy-edge; do

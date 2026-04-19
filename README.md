@@ -4,6 +4,8 @@ Cross-device sync for Claude Code setup: agents, skills, hooks, and shared confi
 
 ## What's in here
 - `agents/` — the 14-person team (Finn, Ben, Dana, Max, Quinn, Cody, Uma, Ivy, Remy, Sage, Mara, Devon, Parker, Nova)
+- `CLAUDE.md` — my 8 standing rules (GitHub as source of truth, Supabase only, etc.), auto-loaded in every Claude session
+- `commands/` — custom slash commands (e.g. `/onboard <repo-name>` to set up a project on a fresh device)
 - `hooks/` — session start/end hooks that auto git pull / push every project
 - `skills/` — shared skills (future)
 - `bootstrap.sh` — one-command setup for a new Mac
