@@ -15,7 +15,7 @@ echo "✅ agents symlinked"
 # 2. Clone all projects
 mkdir -p ~/Projects
 cd ~/Projects
-for repo in bracketx draft-stock-visualizer birdiex pghsportsnews chrisdell-portfolio sharp-report fantasy-edge; do
+for repo in bracketx draft-stock-visualizer birdiex pghsportsnews chrisdell-portfolio ledgerx fantasy-edge; do
   local_name=$repo
   [ "$repo" = "draft-stock-visualizer" ] && local_name=mockx
   if [ ! -d "$local_name" ]; then
